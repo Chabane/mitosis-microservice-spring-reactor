@@ -13,11 +13,11 @@ node {
                       }
 
                       stage ('deploy') {
-                        sh 'docker build -t mitosis/microservice-spring-reactor .'
-                        if (retstat == 1) {
-                            sh 'docker service create --name microservice-spring-reactor --publish 9991:8080 --network microservices-net --replicas 2 mitosis/microservice-spring-reactor'
-                        } else {
-                            sh 'docker service update --replicas 2 --image mitosis/microservice-spring-reactor microservice-spring-reactor'
+                        sh 'docker build -t mitosis/microservice-spring-reactor:1 .'
+                        if (retstat != 1) {
+                            // sh 'docker service update --replicas 2 --image mitosis/microservice-spring-reactor microservice-spring-reactor:1'
+                            sh 'docker service rm microservice-spring-reactor'
                         }
+                        sh 'docker service create --name --publish 9991:8080 --network microservices-net --replicas 2 mitosis/microservice-spring-reactor:1'
                      }
                 }
