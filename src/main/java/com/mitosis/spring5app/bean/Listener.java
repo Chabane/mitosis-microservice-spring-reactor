@@ -17,7 +17,7 @@ public class Listener {
 
     public final CountDownLatch countDownLatch1 = new CountDownLatch(1);
 
-    @KafkaListener(id = "foo", topics = "topic-mitosis", group="mitosis")
+    @KafkaListener(id = "mitosis-group", topics = "topic-mitosis", group="mitosis")
     public void listen(ConsumerRecord<?, ?> record) {
         System.out.println(record);
         countDownLatch1.countDown();
