@@ -8,9 +8,9 @@ targetCompatibility = 1.8
 mainClassName = 'com.mitosis.spring5app.Application'
 
 ext {
-    springKafkaVersion = "1.1.2.RELEASE"
+    springKafkaVersion = "1.2.1.RELEASE"
     springBootVersion = "2.0.0.BUILD-SNAPSHOT"
-    reactorVersion = '3.0.4.RELEASE'
+    reactorVersion = '3.0.7.RELEASE'
 }
 
 buildscript {
