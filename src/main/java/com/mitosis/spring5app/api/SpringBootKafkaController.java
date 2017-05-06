@@ -30,8 +30,8 @@ public class SpringBootKafkaController {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
     
-    @Autowired
-    private Listener listener;
+    //@Autowired
+    //private Listener listener;
 
     @RequestMapping(method = RequestMethod.GET, path = "/hello")
     public void hello() throws ExecutionException, InterruptedException {
