@@ -23,8 +23,8 @@ import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
  *
  * @author root
  */
-@Configuration
-@EnableKafka
+//@Configuration
+//@EnableKafka
 public class KafkaConsumerConfig {
     
     @Value("${brokerList}")
