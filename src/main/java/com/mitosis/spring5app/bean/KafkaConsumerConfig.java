@@ -53,7 +53,6 @@ public class KafkaConsumerConfig {
         propsMap.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "15000");
         propsMap.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         propsMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        propsMap.put(ConsumerConfig.GROUP_ID_CONFIG, "mitosis");
         propsMap.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         return propsMap;
     }

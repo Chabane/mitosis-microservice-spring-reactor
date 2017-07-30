@@ -35,7 +35,7 @@ public class SpringBootKafkaController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/hello")
     public void hello() throws ExecutionException, InterruptedException {
-        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, "Hello world");
+        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, "{'name':'Nirby'}");
         future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
             @Override
             public void onSuccess(SendResult<String, String> result) {
