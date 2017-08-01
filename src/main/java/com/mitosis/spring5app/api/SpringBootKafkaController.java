@@ -37,7 +37,7 @@ public class SpringBootKafkaController {
     public void hello() throws ExecutionException, InterruptedException {
         JSONObject cell = new JSONObject();
         cell.put("name", "myCell");
-        cell.put("type", 0);
+        cell.put("type", "EUCARYOTE");
         cell.put("color", "red");
         cell.put("size", 2);
 
