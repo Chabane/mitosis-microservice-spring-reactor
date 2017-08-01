@@ -5,7 +5,7 @@
  */
 package com.mitosis.spring5app.api;
 
-import com.mitosis.spring5app.bean.Listener;
+import org.json.JSONObject;
 import java.util.concurrent.ExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,7 +35,13 @@ public class SpringBootKafkaController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/hello")
     public void hello() throws ExecutionException, InterruptedException {
-        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, "{'name':'Nirby'}");
+        JSONObject cell = new JSONObject();
+        cell.put("name", "myCell");
+        cell.put("type", 0);
+        cell.put("color", "red");
+        cell.put("size", 2);
+
+        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, cell.toString());
         future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
             @Override
             public void onSuccess(SendResult<String, String> result) {

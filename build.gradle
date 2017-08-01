@@ -13,6 +13,7 @@ ext {
     reactorVersion = '3.1.0.M3'
     retryVersion = '1.2.1.RELEASE'
     sprintTxVersion = '5.0.0.RC3'
+    jsonVersion = '20170516'
 }
 
 buildscript {
@@ -37,12 +38,17 @@ repositories {
     maven { url "http://repo.spring.io/milestone" }
 }
 
+task getHomeDir << {
+    println gradle.gradleHomeDir
+}
+
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     compile("io.projectreactor:reactor-core:$reactorVersion")
     compile("org.springframework.kafka:spring-kafka:$springKafkaVersion")
     compile("org.springframework.retry:spring-retry:$retryVersion")
     compile("org.springframework:spring-tx:$sprintTxVersion")
+    compile("org.json:json:$jsonVersion")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
