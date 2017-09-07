@@ -34,6 +34,12 @@ node {
                         rtGradle.run rootDir: "/", buildFile: 'build.gradle', tasks: 'clean test', buildInfo: buildInfo
                       }
                       
+                      stage('SonarQube analysis') { 
+                        withSonarQubeEnv('Mitosis Sonar') { 
+                          sh 'gradle sonarqube'
+                        }
+                    }
+                    
                       stage ('build') {
                         rtGradle.run rootDir: "/", buildFile: 'build.gradle', tasks: 'build', buildInfo: buildInfo
                       }
