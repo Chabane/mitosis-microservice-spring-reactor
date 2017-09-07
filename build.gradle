@@ -18,7 +18,7 @@ ext {
 
 buildscript {
     repositories {
-        maven { url 'http://artifactory:9999/artifactory' }
+        maven { url 'http://192.168.0.32:9999/artifactory' }
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M3"
