@@ -29,6 +29,7 @@ buildscript {
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M3"
+        classpath "org.springframework.boot:spring-boot-starter-test:2.0.0.M3"
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
     }
 }
@@ -52,5 +53,5 @@ dependencies {
     compile("org.springframework:spring-tx:$sprintTxVersion")
     compile("org.json:json:$jsonVersion")
 
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
 }
