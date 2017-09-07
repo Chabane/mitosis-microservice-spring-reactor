@@ -21,15 +21,19 @@ buildscript {
     repositories {
         maven { url 'http://artifactory:9999/artifactory' }
     }
-    */
     repositories {
         jcenter()
         maven { url 'http://repo.spring.io/snapshot' }
         maven { url 'http://repo.spring.io/milestone' }
     }
+    */
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M3"
     }
+}
+
+repositories {
+    mavenCentral()
 }
 
 jar {
