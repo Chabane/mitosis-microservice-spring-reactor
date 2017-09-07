@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'org.springframework.boot'
+apply plugin: "org.sonarqube"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -28,6 +29,7 @@ buildscript {
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M3"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
     }
 }
 
