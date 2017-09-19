@@ -50,4 +50,9 @@ public class KafkaProducerConfig {
     public KafkaTemplate<String, String> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
+    
+    @Bean
+    public Listener listener() {
+        return new Listener();
+    }
 }
