@@ -13,7 +13,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,8 +36,8 @@ public class SpringBootKafkaController {
     //@Autowired
     //private Listener listener;
 
-    @RequestMapping(method = RequestMethod.GET, path = "/hello")
-    public void hello(@NotNull @PathVariable String name, @NotNull @PathVariable CellType cellType) throws ExecutionException, InterruptedException {
+    @RequestMapping(method = RequestMethod.GET, path = "/createCell")
+    public void createCell(@NotNull @RequestParam String name, @NotNull @RequestParam CellType cellType) throws ExecutionException, InterruptedException {
         JSONObject cell = new JSONObject();
         cell.put("name", name);
         cell.put("type", cellType);
